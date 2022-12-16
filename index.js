@@ -1,10 +1,21 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
 
-/* 
-  Write the Big O time complexity of your function here
-*/
+// Write the Big O time complexity of your function here
+
+function hasTargetSum(array, target) {
+
+  const seenNumbers = {};
+  
+  for (const number of array) {
+    
+    const complement = target - number;
+   
+    if (seenNumbers[complement]) return true;
+   
+    seenNumbers[number] = true;
+  }
+  
+  return false;
+}
 
 /* 
   Add your pseudocode here
